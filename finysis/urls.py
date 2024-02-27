@@ -18,6 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # Admin
     path("admin/", admin.site.urls),
+
+    # Apps Web
     path("core/", include("apps.common.urls")),
+    path("currencies/", include("apps.currencies.urls")),
+
+    # APIs
+    path("api/v1/currencies/", include("apps.currencies.api.urls")),
 ]
