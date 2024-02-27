@@ -41,7 +41,9 @@ INSTALLED_APPS = [
 
     # Local Apps
     "apps.accounts",
+    "apps.currencies",
     "apps.financials",
+    "apps.reports",
 
     # 3rd Party Apps
 ]
