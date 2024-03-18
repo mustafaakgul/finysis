@@ -12,3 +12,6 @@
 
 ### Structure
 * Business Logic: https://sunscrapers.com/blog/where-to-put-business-logic-django/
+
+
+her satır cevrilcek

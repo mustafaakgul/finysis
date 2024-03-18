@@ -27,4 +27,5 @@ urlpatterns = [
 
     # APIs
     path("api/v1/currencies/", include("apps.currencies.api.urls")),
+    path("api/v1/financials/", include("apps.financials.api.urls")),
 ]
