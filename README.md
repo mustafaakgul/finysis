@@ -1,4 +1,4 @@
-##
+## Track and visualize financial data with a Django analytics project
 
 ### Financial Notes
 * Borç bakiyesi ve alacak bakiyesi kümülatif degil ve direk gözüküyor
