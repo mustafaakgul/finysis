@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Hesap Kodu</th>
+        <th>Hesap Adı</th>
+        <th>Ocak</th>
+        <th>Subat</th>
+        <th>Mart</th>
+        <th>Nisan</th>
+        {% for mizan in mizans %}
+            <tr>
+                <td>{{ mizan.account_code }}</td>
+                <td>{{ mizan.account_name }}</td>
+                <td>{{ mizan.total_balance }}</td>
+                <td>{{ mizan.total_balance }}</td>
+                <td>{{ mizan.total_balance }}</td>
+                <td>{{ mizan.total_balance }}</td>
+            </tr>
+        {% endfor %}
+</table>
+</body>
+</html>

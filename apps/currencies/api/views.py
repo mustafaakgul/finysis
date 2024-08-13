@@ -52,7 +52,7 @@ class AddCurrency(APIView):
 
 
     def add_currency_for_this_month(self):
-        first_day_of_month = date.today().replace(day=15)
+        first_day_of_month = date.today().replace(day=1)
         last_day_of_month = date.today().replace(day=29)
 
         for single_date in [first_day_of_month + timedelta(days=n) for n in range((last_day_of_month - first_day_of_month).days)]:
@@ -99,21 +99,22 @@ class AddCurrencyAverage(APIView):
         number_of_days = 0
 
         for single_date in [first_day_of_month + timedelta(days=n) for n in range((last_day_of_month - first_day_of_month).days)]:
-            # currency = Currency.objects.filter(date__isnull=False).filter(date=single_date).first()
-            currency = self.get_currency_by_date(single_date)
+            currency = Currency.objects.filter(date__isnull=False).filter(date=single_date).first()
+            # currency = self.get_currency_by_date(single_date)
             if currency is not None:
                 total_buying += currency.buying
                 total_selling += currency.selling
                 number_of_days += 1
 
         print(total_buying, total_selling)
-        currency_average = CurrencyAverage.objects.create(
-            date=generate_date_string(last_day_of_month.day, last_day_of_month.month, last_day_of_month.year),
-            currency="USD",
-            buying=total_buying / number_of_days,
-            selling=total_selling / number_of_days
-        )
-        currency_average.save()
+        if number_of_days != 0:
+            currency_average = CurrencyAverage.objects.create(
+                date=generate_date_string(last_day_of_month.day, last_day_of_month.month, last_day_of_month.year),
+                currency="USD",
+                buying=total_buying / number_of_days,
+                selling=total_selling / number_of_days
+            )
+            currency_average.save()
 
         return "test"
 

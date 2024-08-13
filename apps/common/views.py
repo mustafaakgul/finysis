@@ -6,11 +6,30 @@ import os
 from decimal import Decimal
 from django.shortcuts import render
 
-from apps.financials.models import Mizan
+from apps.financials.models import Mizan, MizanByDate
+
+
+# Get Mizan by date
+def get(request):
+    mizans = Mizan.objects.all()
+
+    ### Make a query to get the mizans by date
+    mizans_by_date = MizanByDate.objects.create()
+
+    for mizan in mizans:
+        mizans_by_date_obj = MizanByDate.objects.create(
+        account_code = mizan.account_code,
+        account_name = mizan.account_name,
+        total_balance_january = mizans.objects.filter(account_code = mizan.account_code, date = '30.04.2022').total_balance
+        )
+        mizans_by_date.add(mizans_by_date_obj)
+
+    return render(request, "common/get.html", {"mizans": mizans_by_date})
+
 
 
 def add(request):
-    data = pd.read_excel('/Users/mustafaakgul/Documents/GitHub/finysis/test.xlsx', sheet_name='31.01.2022')
+    data = pd.read_excel('/Users/mustafaakgul/Documents/GitHub/finysis/test.xlsx', sheet_name='30.04.2022')
     data.replace(np.nan, 0, inplace=True) # Not None, but 0
     new = data
     for  row in data.itertuples():
@@ -23,6 +42,7 @@ def add(request):
             credit=Decimal(row[5]),
             debit_balance=Decimal(row[6]),
             credit_balance=Decimal(row[7]),
+            date = '30.04.2022'
         )
 
         # debit = str(row[4]),
