@@ -19,7 +19,7 @@ def add_this_month(request):
     # )
     # currency_model.save()
 
-    return render(request, "currencies/add.html")
+    return render(request, "docs/currencies/add.html")
 
 
 # def generate_date_string(day, month, year):
