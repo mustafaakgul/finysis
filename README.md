@@ -1,9 +1,8 @@
 ## Track and visualize financial data with a Django analytics project
 
-### Financial Notes in Tr
-* Borç bakiyesi ve alacak bakiyesi kümülatif degil ve direk gözüküyor
-* Borç ve alacak gözükmüyor
-* 999 a kadar standart, sonrası sirkete gore değişiyor
+### Financial Notes
+* 999 stardart, others can be changed by companies
+* Four decimal places for currencies
 
 
 ### To Test (Python Console)
@@ -22,3 +21,9 @@
 
 ### Structure
 * Business Logic: https://sunscrapers.com/blog/where-to-put-business-logic-django/
+
+
+### To Do
+* Formatting currency, localization
+* Validation of inserting by month
+* Try to move new table cumulative mizans from old
