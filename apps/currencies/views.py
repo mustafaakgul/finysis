@@ -5,12 +5,15 @@ from apps.currencies.models import Currency
 
 
 def add_this_month(request):
-    # cur = DovizKurlari()
+    cur = DovizKurlari()
     # usd_buying = cur.Arsiv(27,2,2024,"USD","BanknoteBuying")
     # usd_selling = cur.Arsiv(27,2,2024,"USD","BanknoteSelling")
-    #
-    # print(usd_buying, usd_selling)
-    #
+
+    usd_buying = cur.Arsiv(11,10,2024,"USD","BanknoteBuying")
+    usd_selling = cur.Arsiv(11,10,2024,"USD","BanknoteSelling")
+
+    print(usd_buying, usd_selling)
+
     # currency_model = Currency.objects.create(
     #     date=generate_date_string(27, 2, 2024),
     #     currency="USD",

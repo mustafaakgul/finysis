@@ -6,7 +6,7 @@
 
 
 ### To Test (Python Console)
-* usd = cur.get_current_rate('USD', 'BanknoteBuying') //"BanknoteBuying":Alış Değeri, "BanknoteSelling":Satış Değeri
+* usd = cur.get_current_rate('USD', 'BanknoteBuying')
 
 
 ### How to Run
@@ -24,6 +24,3 @@
 
 
 ### To Do
-* Formatting currency, localization
-* Validation of inserting by month
-* Try to move new table cumulative mizans from old

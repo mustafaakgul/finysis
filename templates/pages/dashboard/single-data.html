@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Hesap Kodu</th>
+        <th>Hesap Adı</th>
+        <th>Ocak</th>
+        <th>Subat</th>
+        <th>Mart</th>
+        <th>Nisan</th>
+        {% for single_data in data %}
+            <tr>
+                <td>{{ single_data.account_code }}</td>
+                <td>{{ single_data.account_name }}</td>
+                <td>{{ single_data.total_balance_january }}</td>
+                <td>{{ single_data.total_balance_february }}</td>
+                <td>{{ single_data.total_balance_march }}</td>
+                <td>{{ single_data.total_balance }}</td>
+            </tr>
+        {% endfor %}
+</table>
+</body>
+</html>
