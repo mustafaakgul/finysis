@@ -45,7 +45,7 @@ def cumulative(request):
         )
         mizans_by_date_array.append(mizans_by_date_obj)
 
-    return render(request, "pages/dashboard/cumulative.html", {"mizans": mizans_by_date_array})
+    return render(request, "pages/dashboard/cumulative-tl.html", {"mizans": mizans_by_date_array})
 
 # Get Mizan by date
 def get(request):
